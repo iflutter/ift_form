@@ -143,7 +143,7 @@ class FormParser {
           }
         } else if (charCode == labelEndCharCode) {
           //label with quotation marks
-          label = baseInfoStr.substring(labelStartIndex + 1, i - 1).trim();
+          label = baseInfoStr.substring(labelStartIndex + 1, i).trim();
         }
       } else if (fieldType == null) {
         if (fieldStartIndex < 0 && _isWhiteSpace(charCode)) {
