@@ -1,6 +1,6 @@
 name: ift_form
-description: A new Flutter package project.
-version: 0.0.1
+description: A flutter form builder lib
+version: 0.0.1-alpha
 author:
 homepage:
 
