@@ -77,6 +77,7 @@ class FieldRow extends StatelessWidget {
         child: root,
         isFocused: isFocused,
         isReadOnly: isReadOnly,
+        errorText: errorText,
       );
     }
     return root;
