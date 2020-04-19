@@ -1,8 +1,8 @@
 name: ift_form
 description: A flutter form builder lib
 version: 0.0.1-alpha
-author:
-homepage:
+author: iflutter <shenkaige86@gmail.com>
+homepage: https://github.com/iflutter/ift_form
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
