@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 
 class DividerWidget extends FieldWidget<DividerField> {
-  DividerWidget(DividerField field, FormBuilderState formState, {Key key})
+  DividerWidget(DividerField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

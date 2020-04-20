@@ -1,10 +1,10 @@
 import 'package:ift_form/ift_form.dart';
 
 typedef ValidatorFunc = dynamic Function(
-    FormBuilderState formState, Field field, Object value);
+    IftFormState formState, Field field, Object value);
 
 abstract class Validator<T> {
-  dynamic validate(FormBuilderState formState, Field field, T value);
+  dynamic validate(IftFormState formState, Field field, T value);
 
   String onBadFormat(Field field) {
     return "${field.label}格式不正确";

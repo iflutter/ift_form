@@ -11,7 +11,7 @@ class DividerField extends Field {
   }
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     return DividerWidget(this, formState);
   }
 }

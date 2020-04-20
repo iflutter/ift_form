@@ -3,7 +3,7 @@ import 'package:ift_form/ift_form.dart';
 import 'dart:math';
 
 class InputWidget extends FieldWidget<InputField> {
-  InputWidget(InputField field, FormBuilderState formState, {Key key})
+  InputWidget(InputField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override
@@ -96,6 +96,7 @@ class InputFieldState extends FieldWidgetState<InputWidget> {
           },
           style: TextStyle(color: isReadOnly ? Colors.grey : Colors.black),
           textAlign: TextAlign.right,
+          obscureText: widget.field.obscureText ?? false,
           decoration: InputDecoration(
             counterText: '',
             border: InputBorder.none,

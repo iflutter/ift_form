@@ -7,7 +7,7 @@ class VRange extends Validator {
   VRange({this.rangeStart, this.rangeEnd});
 
   @override
-  validate(FormBuilderState formState, Field field, value) {
+  validate(IftFormState formState, Field field, value) {
     if (rangeEnd == null && rangeEnd == null) {
       return null;
     }

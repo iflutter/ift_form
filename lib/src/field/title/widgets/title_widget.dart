@@ -3,7 +3,7 @@ import 'package:ift_form/ift_form.dart';
 import 'package:ift_form/src/field/title/title.dart';
 
 class TitleWidget extends FieldWidget<TitleField> {
-  TitleWidget(TitleField field, FormBuilderState formState, {Key key})
+  TitleWidget(TitleField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

@@ -3,7 +3,7 @@ import 'package:ift_form/ift_form.dart';
 
 abstract class FieldWidget<T extends Field> extends StatefulWidget {
   final T field;
-  final FormBuilderState formState;
+  final IftFormState formState;
 
   FieldWidget(this.field, this.formState, {Key key}) : super(key: key);
 

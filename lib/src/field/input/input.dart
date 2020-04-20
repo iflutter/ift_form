@@ -7,6 +7,7 @@ class InputField extends Field {
   int maxLines;
   int maxLength;
   TextInputType textInputType;
+  final bool obscureText;
 
   InputField({
     String key,
@@ -20,6 +21,7 @@ class InputField extends Field {
     AppendedTextStyle suffixTextStyle,
     List<Validator> validators,
     String validatorsExp,
+    this.obscureText = false,
   }) : super(
           key: key,
           label: label,
@@ -45,7 +47,7 @@ class InputField extends Field {
   }
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     if (_key == null) {
       _key = GlobalKey<InputFieldState>();
     }

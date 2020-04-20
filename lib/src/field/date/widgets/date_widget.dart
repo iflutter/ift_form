@@ -3,7 +3,7 @@ import 'package:ift_form/ift_form.dart';
 import 'package:intl/intl.dart';
 
 class DateWidget extends FieldWidget<DateField> {
-  DateWidget(DateField field, FormBuilderState formState, {Key key})
+  DateWidget(DateField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

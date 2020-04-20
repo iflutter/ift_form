@@ -43,7 +43,7 @@ class CustomField extends Field {
   }
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     if (_key == null) {
       _key = GlobalKey<CustomFieldState>();
     }
@@ -62,6 +62,6 @@ abstract class CustomFieldBuilder {
     return false;
   }
 
-  Widget buildContent(FormBuilderState form, CustomFieldState customField,
+  Widget buildContent(IftFormState form, CustomFieldState customField,
       BuildContext context);
 }

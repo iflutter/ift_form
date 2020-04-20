@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 import 'package:ift_form/src/field/selector/widgets/selector_widget.dart';
 
-typedef SelectorHandler = Future<Object> Function(FormBuilderState form,SelectorField selectorField);
+typedef SelectorHandler = Future<Object> Function(IftFormState form,SelectorField selectorField);
 
 class SelectorField extends Field {
   SelectorHandler handler;
@@ -41,7 +41,7 @@ class SelectorField extends Field {
   GlobalKey<SelectorFieldState> _key;
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     if (_key == null) {
       _key = GlobalKey<SelectorFieldState>();
     }

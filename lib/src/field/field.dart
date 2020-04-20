@@ -44,7 +44,7 @@ abstract class Field {
 
   dynamic getValue();
 
-  FieldWidget build(FormBuilderState formState, BuildContext context);
+  FieldWidget build(IftFormState formState, BuildContext context);
 }
 
 class AppendedTextStyle {

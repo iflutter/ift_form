@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 
 class OptionsWidget extends FieldWidget<OptionsField> {
-  OptionsWidget(OptionsField field, FormBuilderState formState, {Key key})
+  OptionsWidget(OptionsField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

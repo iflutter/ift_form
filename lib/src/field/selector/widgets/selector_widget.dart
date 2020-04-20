@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 
 class SelectorWidget extends FieldWidget<SelectorField> {
-  SelectorWidget(SelectorField field, FormBuilderState formState, {Key key})
+  SelectorWidget(SelectorField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

@@ -7,7 +7,7 @@ class VLength extends Validator {
   VLength({this.max, this.min});
 
   @override
-  validate(FormBuilderState formState, Field field, value) {
+  validate(IftFormState formState, Field field, value) {
     if (min == null && max == null) {
       return null;
     }

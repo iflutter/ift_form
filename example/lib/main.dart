@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final formKey = GlobalKey<FormBuilderState>();
+  final formKey = GlobalKey<IftFormState>();
   final ScrollController scrollController = ScrollController();
 
   @override

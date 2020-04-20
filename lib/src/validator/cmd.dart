@@ -6,7 +6,7 @@ class VCmd extends Validator {
   VCmd(this.cmdIds);
 
   @override
-  validate(FormBuilderState formState, Field field, value) {
+  validate(IftFormState formState, Field field, value) {
     String result;
     if (cmdIds != null && cmdIds.isNotEmpty) {
       for (var id in cmdIds) {
@@ -21,7 +21,7 @@ class VCmd extends Validator {
   }
 
   static String checkValidator(
-      FormBuilderState formState, Object validator, Object value, Field field) {
+      IftFormState formState, Object validator, Object value, Field field) {
     String valueStr = value == null ? '' : value.toString();
     String result;
     if (validator is String) {

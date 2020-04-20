@@ -38,7 +38,7 @@ class DateField extends Field {
   GlobalKey<DateFieldState> _key;
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     if (_key == null) {
       _key = GlobalKey<DateFieldState>();
     }

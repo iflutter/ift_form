@@ -6,7 +6,7 @@ class VReg extends Validator {
   VReg({this.reg});
 
   @override
-  validate(FormBuilderState formState, Field field, value) {
+  validate(IftFormState formState, Field field, value) {
     String valueStr = value == null ? '' : value.toString();
     if (RegExp(reg).hasMatch(valueStr)) {
       return null;

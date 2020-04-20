@@ -35,6 +35,7 @@ typedef CustomFieldFactory = CustomFieldBuilder Function(String dataSourceId);
 class IftForm extends StatefulWidget {
   static const FieldTypeString = 'string';
   static const FieldTypeTextarea = 'textarea';
+  static const FieldTypePwd = 'pwd';
   static const FieldTypeEmail = 'email';
   static const FieldTypeNumber = 'number';
   static const FieldTypePhone = 'phone';
@@ -91,17 +92,17 @@ class IftForm extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return FormBuilderState(fields: fields, formExpression: formExpression);
+    return IftFormState(fields: fields, formExpression: formExpression);
   }
 }
 
-class FormBuilderState extends State<IftForm> {
+class IftFormState extends State<IftForm> {
   final List<FieldWidget> fieldWidgets = List<FieldWidget>();
   String formExpression;
   List<Field> fields;
   final Map<String, Field> _fieldsMap = {};
 
-  FormBuilderState({this.fields, this.formExpression}) {
+  IftFormState({this.fields, this.formExpression}) {
     if (this.formExpression != null) {
       fields = FormParser.instance().parseForm(formExpression).fields;
     }

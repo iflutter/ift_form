@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 
 class InputAreaWidget extends FieldWidget<InputArea> {
-  InputAreaWidget(InputArea field, FormBuilderState formState, {Key key})
+  InputAreaWidget(InputArea field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

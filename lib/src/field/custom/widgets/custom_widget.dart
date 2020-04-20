@@ -5,7 +5,7 @@ import 'package:ift_form/src/field/custom/custom.dart';
 class CustomWidget extends FieldWidget<CustomField> {
   final String customTypeId;
 
-  CustomWidget(CustomField field, FormBuilderState formState, this.customTypeId,
+  CustomWidget(CustomField field, IftFormState formState, this.customTypeId,
       {Key key})
       : super(field, formState, key: key);
 

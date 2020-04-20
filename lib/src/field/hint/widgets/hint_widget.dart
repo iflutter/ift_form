@@ -3,7 +3,7 @@ import 'package:ift_form/ift_form.dart';
 import 'package:ift_form/src/field/hint/hint.dart';
 
 class HintWidget extends FieldWidget<HintField> {
-  HintWidget(HintField field, FormBuilderState formState, {Key key})
+  HintWidget(HintField field, IftFormState formState, {Key key})
       : super(field, formState, key: key);
 
   @override

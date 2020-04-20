@@ -6,7 +6,7 @@ class VReqIn extends Validator {
   VReqIn(this.reqInKeys);
 
   @override
-  validate(FormBuilderState formState, Field field, value) {
+  validate(IftFormState formState, Field field, value) {
     if (reqInKeys == null || reqInKeys.isEmpty) {
       return null;
     }

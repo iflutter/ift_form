@@ -209,6 +209,9 @@ class FormParser {
     switch (fieldType) {
       case IftForm.FieldTypeString:
         return InputField(key: key, label: label, hint: hint);
+      case IftForm.FieldTypePwd:
+        return InputField(
+            key: key, label: label, hint: hint, obscureText: true);
       case IftForm.FieldTypeTextarea:
         return InputField(key: key, label: label, hint: hint)
           ..maxLines = 5

@@ -41,7 +41,7 @@ class OptionsField extends Field {
   GlobalKey<OptionsFieldState> _key;
 
   @override
-  FieldWidget build(FormBuilderState formState, BuildContext context) {
+  FieldWidget build(IftFormState formState, BuildContext context) {
     if (_key == null) {
       _key = GlobalKey<OptionsFieldState>();
     }
