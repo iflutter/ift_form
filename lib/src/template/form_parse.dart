@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 import 'package:ift_form/src/field/custom/custom.dart';
 import 'package:ift_form/src/validator/cmd.dart';
+import 'package:ift_form/src/validator/field_equal.dart';
 import 'package:ift_form/src/validator/req_in.dart';
 
 import '../field/title/title.dart';
@@ -355,6 +356,21 @@ class FormParser {
       case 'picker':
         _parsePicker(field, argsRawStr);
         break;
+      case 'fequal':
+        _parseValidateFEqual(field, argsRawStr);
+        break;
+    }
+  }
+
+  void _parseValidateFEqual(Field field, String argsRawStr) {
+    List<String> args = _parseNomralFuncArgs(argsRawStr);
+    if (args == null || args.isEmpty) {
+      return;
+    }
+    if (args.length > 1) {
+      _addValidator(field, VFieldEqual(args[0], args[1]));
+    } else {
+      _addValidator(field, VFieldEqual(args[0], null));
     }
   }
 
