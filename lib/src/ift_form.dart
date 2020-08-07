@@ -137,6 +137,31 @@ class IftFormState extends State<IftForm> {
     return isOk;
   }
 
+  bool validateFieldByKey(String key, {ScrollController scrollController}) {
+    bool isOk = true;
+    double firstFailedCellOffsetY = -1;
+    for (var f in fieldWidgets) {
+      if (f.field.key == key) {
+        if (f.key is GlobalKey<FieldWidgetState>) {
+          GlobalKey<FieldWidgetState> fs = f.key;
+          isOk = fs.currentState.validate() && isOk;
+          if (!isOk && firstFailedCellOffsetY < 0) {
+            final RenderBox box = fs.currentContext.findRenderObject();
+            //final size = box.size;
+            final topLeftPosition = box.localToGlobal(
+                _getSelfGlobalTopOffset());
+            firstFailedCellOffsetY = topLeftPosition.dy;
+          }
+        }
+        break;
+      }
+    }
+    if (scrollController != null && !isOk && firstFailedCellOffsetY > 0) {
+      scrollController.jumpTo(firstFailedCellOffsetY);
+    }
+    return isOk;
+  }
+
   Map<String, Object> save({
     bool keepNullValue = false,
     bool ignoreLocalKey = false,
