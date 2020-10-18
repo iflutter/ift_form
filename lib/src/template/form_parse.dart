@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ift_form/ift_form.dart';
 import 'package:ift_form/src/field/custom/custom.dart';
+import 'package:ift_form/src/field/radio/radios.dart';
 import 'package:ift_form/src/validator/cmd.dart';
 import 'package:ift_form/src/validator/field_equal.dart';
 import 'package:ift_form/src/validator/req_in.dart';
@@ -236,6 +237,9 @@ class FormParser {
           ..textInputType = TextInputType.numberWithOptions(decimal: true);
       case IftForm.FieldTypeOptions:
         return OptionsField(key: key, label: label, hint: hint)
+          ..optionsDataSourceId = typeArgId;
+      case IftForm.FieldTypeRadioGroup:
+        return RadiosField(key: key, label: label, hint: hint)
           ..optionsDataSourceId = typeArgId;
       case IftForm.FieldTypeSelector:
         return SelectorField(key: key, label: label, hint: hint)

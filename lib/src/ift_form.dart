@@ -48,6 +48,7 @@ class IftForm extends StatefulWidget {
   static const FieldTypeHint = 'hint';
   static const FieldTypeTitle = 'title';
   static const FieldTypeDate = 'date';
+  static const FieldTypeRadioGroup = 'radio';
   static const FieldTypeCustom = 'custom';
 
   static const ReadonlyAll = '*readonly';
