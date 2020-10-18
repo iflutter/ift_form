@@ -62,6 +62,10 @@ abstract class CustomFieldBuilder {
     return false;
   }
 
+  bool noWrapper() {
+    return false;
+  }
+
   Widget buildContent(IftFormState form, CustomFieldState customField,
       BuildContext context);
 }

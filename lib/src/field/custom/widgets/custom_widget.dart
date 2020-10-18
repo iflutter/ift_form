@@ -31,18 +31,22 @@ class CustomFieldState extends FieldWidgetState<CustomWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final isReadOnly = widget.formState.isReadOnlyField(widget.field);
-    return FieldRow(
-      child: Padding(
-        padding: EdgeInsets.only(right: 8),
-        child: cfb.buildContent(widget.formState, this, context),
-      ),
-      fieldWidget: widget,
-      isReadOnly: isReadOnly,
-      fieldWidgetState: this,
-      isFocused: cfb.isFocused(),
-      errorText: getErrorMsg(),
-    );
+    if(cfb.noWrapper()){
+      return cfb.buildContent(widget.formState, this, context);
+    }else{
+      final isReadOnly = widget.formState.isReadOnlyField(widget.field);
+      return FieldRow(
+        child: Padding(
+          padding: EdgeInsets.only(right: 8),
+          child: cfb.buildContent(widget.formState, this, context),
+        ),
+        fieldWidget: widget,
+        isReadOnly: isReadOnly,
+        fieldWidgetState: this,
+        isFocused: cfb.isFocused(),
+        errorText: getErrorMsg(),
+      );
+    }
   }
 
   @override
