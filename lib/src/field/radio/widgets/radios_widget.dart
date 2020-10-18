@@ -31,7 +31,7 @@ class RadiosFieldState extends FieldWidgetState<RadiosWidget> {
     var root = Container(
       alignment: Alignment.centerRight,
       child: Wrap(
-        children: _buildRadios(),
+        children: _buildRadios(isReadOnly),
         spacing: 5,
       ),
     );
@@ -46,23 +46,23 @@ class RadiosFieldState extends FieldWidgetState<RadiosWidget> {
     );
   }
 
-  List<Widget> _buildRadios() {
+  List<Widget> _buildRadios(bool isReadOnly) {
     var menus = List<Widget>();
     List<Object> dataSource = _getDataSource();
     if (dataSource != null) {
       for (var item in dataSource) {
-        menus.add(buildItem(item));
+        menus.add(buildItem(item, isReadOnly));
       }
     }
     return menus;
   }
 
-  Widget buildItem(value) {
+  Widget buildItem(value, bool isReadOnly) {
     final root = Radio(
       groupValue: curValue,
       toggleable: true,
       value: value,
-      onChanged: (value) {
+      onChanged: isReadOnly == true ? null : (value) {
         setState(() {
           curValue = value;
           notifyValueChanged();
@@ -71,15 +71,19 @@ class RadiosFieldState extends FieldWidgetState<RadiosWidget> {
     );
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: [ root, Container(
-        child: GestureDetector(
-          child: Text(valueOrHint(value),),
-          onTap: () {
-            curValue = value;
-            notifyValueChanged();
-          },
+      children: [
+        root,
+        Container(
+          child: GestureDetector(
+            child: Text(
+              valueOrHint(value),
+            ),
+            onTap: () {
+              curValue = value;
+              notifyValueChanged();
+            },
+          ),
         ),
-      ),
       ],
     );
   }
