@@ -88,7 +88,7 @@ class InputFieldState extends FieldWidgetState<InputWidget> {
               ? null
               : (_maxLengthFromValidator ?? widget.field.maxLength),
           minLines: widget.field.minLines ?? widget.field.maxLines ?? 1,
-          maxLines: widget.field.maxLines ?? 1,
+          maxLines: isReadOnly?null:(widget.field.maxLines ?? 1),
           validator: (String value) {
             this.validate(isInUIBuildLife: true);
             //print("do valid $value");
